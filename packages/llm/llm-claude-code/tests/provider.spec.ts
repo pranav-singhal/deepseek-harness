@@ -157,14 +157,17 @@ async function useExecutable(): Promise<string> {
   return bin
 }
 
-function request(text = 'hi', extra: Partial<GenerateOptions> = {}): GenerateOptions {
+function request(
+  text = 'hi',
+  extra: Partial<Omit<GenerateOptions, 'purpose'>> & { purpose?: string } = {},
+): GenerateOptions {
   return {
     provider: 'claude-code',
     model: 'sonnet',
     messages: [createUserMessage({ content: [{ type: 'text', text }], source: { kind: 'user' } })],
     sessionId: brandString<Branded<'SessionId'>>('session'),
     ...extra,
-  }
+  } as GenerateOptions
 }
 
 async function collect(stream: AsyncIterable<StreamChunk>): Promise<StreamChunk[]> {
