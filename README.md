@@ -40,6 +40,24 @@ pnpm dsh web
 
 `pnpm run build` prepares the repository artifacts. `pnpm dsh web` uses those built artifacts without rebuilding.
 
+### Claude models on macOS
+
+This checkout can call Claude through the Claude Code program already installed on the Mac. DeepSeek Harness does not ask for a Claude API key and does not read Claude Code's credential files. Install [Claude Code](https://code.claude.com/docs/en/setup), then sign in inside that program:
+
+```sh
+claude
+```
+
+Type `/login` and finish the sign-in Claude Code presents. Leave that program installed. From the repository checkout:
+
+```sh
+pnpm install
+pnpm run build
+pnpm dsh web
+```
+
+Node.js 24.9 or newer and pnpm are required. Open **Settings → Models**. The row **Claude (via Claude Code)** lists the models Claude Code reports after it is installed and signed in. If the program is missing or not signed in, the row tells you to install Claude Code, run `claude`, and type `/login`. Pick a model from that row. Set `DSH_CLAUDE_PATH` to the `claude` executable when it is not on `PATH`.
+
 ## Community and support
 
 - Submit feedback or bug reports through [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions).

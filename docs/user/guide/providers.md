@@ -46,6 +46,12 @@ To change a provider’s model order, edit it in **Settings → Models**, open *
 
 If a saved default names a provider that was deleted, the composer displays **Select model** and blocks input until another model is selected.
 
+## Use Claude through Claude Code
+
+The base profile includes **Claude (via Claude Code)**. It runs the Claude Code program installed on the same computer and uses that program's existing login. DeepSeek Harness does not ask for a Claude API key and does not read Claude Code's credential files.
+
+Install Claude Code, run `claude`, and type `/login`. Open **Settings → Models**. When the program is missing or not signed in, the row explains those steps. After it is signed in, pick one of the models Claude Code reports. Set `DSH_CLAUDE_PATH` when `claude` is not on `PATH`. The [`dsh-llm-claude-code`](../../../packages/llm/llm-claude-code/README.md) reference owns the process, tool, and login behavior.
+
 ## Advanced configuration
 
 The generated [plugin configuration catalog](../../config-catalog.md) lists every supported field and default for every plugin; [`dsh-llm-pi-ai`](../../config-catalog.md#deepseek-aidsh-llm-pi-ai) is the provider section this page configures. The [`dsh-llm-pi-ai`](../../../packages/llm/llm-pi-ai/README.md) and [`dsh-llm-deepseek`](../../../packages/llm/llm-deepseek/README.md) references own direct `cordis.patch.yml` configuration, catalog resolution, reasoning controls, credentials, and adapter errors.

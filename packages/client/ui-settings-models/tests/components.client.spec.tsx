@@ -2413,6 +2413,37 @@ it('keeps an inherited profile endpoint ahead of dynamic provider configuration'
   expect(input.getAttribute('aria-describedby')).toBeNull()
 })
 
+it('shows the Claude Code status and does not offer an edit action', async () => {
+  const scripted = scriptedFace()
+  const message = 'Claude Code is not installed. Install Claude Code, then run claude and type /login.'
+  const namespaces = [
+    ...wireNamespaces(),
+    {
+      ns: 'llm-claude-code',
+      schema: JSON.parse(JSON.stringify(Schema.object({ enabled: Schema.boolean().default(true) }).toJSON())) as JsonValue,
+      value: { enabled: true },
+      autoGenerate: true, applies: 'live' as const,
+      secrets: [],
+      revision: 0,
+    },
+  ]
+  scripted.face.settings.describe.mockResolvedValue(remoteOk({ writable: true, hasDocument: false, namespaces }))
+  scripted.face.llm.listConfigurableProviders.mockResolvedValue(remoteOk([
+    {
+      provider: 'claude-code',
+      displayName: 'Claude (via Claude Code)',
+      settingsNs: 'llm-claude-code',
+      settingsPath: ['enabled'],
+      error: message,
+    },
+  ]))
+  await mountFace(scripted)
+  const card = screen.getByText('Claude (via Claude Code)').closest('li')!
+  expect(within(card).getByRole('alert').textContent).toBe(message)
+  expect(within(card).queryByRole('button', { name: 'Edit Claude (via Claude Code) (claude-code)' })).toBeNull()
+  expect(within(card).queryByLabelText(en.keyInput)).toBeNull()
+})
+
 it('renders the localized account row as signed in without an edit action', async () => {
   const scripted = scriptedFace({})
   const { controller } = await mountFace(scripted)
