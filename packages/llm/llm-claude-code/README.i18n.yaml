@@ -1,0 +1,61 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write packages/llm/llm-claude-code/README.md
+/:
+  en: 779a89ddf72f03ec
+  zh: 64405d182798df80
+/deepseek-ai-dsh-llm-claude-code:
+  en: 61d4bf476e0fb131
+  zh: 34a864286ff6478a
+/deepseek-ai-dsh-llm-claude-code/summary:
+  en: 31e7117f06c4d2e8
+  zh: 8e1586344b50fa4f
+/deepseek-ai-dsh-llm-claude-code/table-of-contents:
+  en: b4eaeecc8ba07c31
+  zh: cfbcc775282e9d6e
+/deepseek-ai-dsh-llm-claude-code/use:
+  en: 29d1be846fe95df3
+  zh: 1124c76d65002a9f
+/deepseek-ai-dsh-llm-claude-code/understand:
+  en: cfdc8dbf8364d4f8
+  zh: e37ee79e30b59f8b
+/deepseek-ai-dsh-llm-claude-code/further-exploration:
+  en: b77846c47706fbca
+  zh: 4cd614079021422d
+/deepseek-ai-dsh-llm-claude-code/model-experience:
+  en: 215e7ba838619b7b
+  zh: a311da3843709f90
+/deepseek-ai-dsh-llm-claude-code/model-experience/appended-instructions:
+  en: 3f21a7e32ad540e1
+  zh: e3e0daed3d40b785
+/deepseek-ai-dsh-llm-claude-code/model-experience/appended-instructions/what-the-model-sees:
+  en: 5aea26e82e73ef2b
+  zh: aec5ed006ab6cea3
+/deepseek-ai-dsh-llm-claude-code/model-experience/appended-instructions/what-the-model-sees/appended-note:
+  en: e6f99d4b75d6be67
+  zh: 5fe879132e6caed7
+/deepseek-ai-dsh-llm-claude-code/model-experience/appended-instructions/token-effect:
+  en: 74465dc276f7f4be
+  zh: 3fc2ff18d3cbca80
+/deepseek-ai-dsh-llm-claude-code/model-experience/appended-instructions/kv-cache-effect:
+  en: da6871f7c7eca59f
+  zh: f4bfec26ad1d4c67
+/deepseek-ai-dsh-llm-claude-code/model-experience/transcript-and-tools:
+  en: 8c0728f4414cf375
+  zh: 79f5b37d69145b0a
+/deepseek-ai-dsh-llm-claude-code/model-experience/transcript-and-tools/what-the-model-sees:
+  en: 9029d8555e18cca7
+  zh: e76ea4189890cb62
+/deepseek-ai-dsh-llm-claude-code/model-experience/transcript-and-tools/token-effect:
+  en: d57592187f873ba7
+  zh: 8c857ef822049dab
+/deepseek-ai-dsh-llm-claude-code/model-experience/transcript-and-tools/kv-cache-effect:
+  en: 060612854dbcce07
+  zh: b7c907f72c9c5637
+/deepseek-ai-dsh-llm-claude-code/known-limitations-and-deferred-work:
+  en: dc9e1c475a245510
+  zh: 61d440fcae2e09d6
+/deepseek-ai-dsh-llm-claude-code/known-limitations-and-deferred-work/dev-note:
+  en: ff839881dfc76e55
+  zh: 28981300fd1f2e1b

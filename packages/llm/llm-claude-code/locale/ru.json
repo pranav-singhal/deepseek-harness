@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Claude (через Claude Code)",
+    "description": "Запускает модели Claude через программу Claude Code, установленную на этом компьютере."
+  }
+}

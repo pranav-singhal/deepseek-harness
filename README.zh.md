@@ -30,6 +30,7 @@ npx @deepseek-ai/dsh web
 
 <a id="run-from-source"></a>
 
+<a id="run-from-source"></a>
 ### 从源码运行
 
 如需从仓库源码运行：
@@ -43,6 +44,24 @@ pnpm dsh web
 ```
 
 `pnpm run build` 会准备仓库产物。`pnpm dsh web` 会直接使用这些已构建产物，不会重新构建。
+
+### 在 macOS 上使用 Claude 模型
+
+这份源码可以通过本机已经安装的 Claude Code 程序调用 Claude。DeepSeek Harness 不会索取 Claude API key，也不会读取 Claude Code 的凭据文件。先安装 [Claude Code](https://code.claude.com/docs/en/setup)，再在该程序里登录：
+
+```sh
+claude
+```
+
+输入 `/login`，完成 Claude Code 给出的登录。保持该程序已安装。在仓库检出目录中执行：
+
+```sh
+pnpm install
+pnpm run build
+pnpm dsh web
+```
+
+需要 Node.js 24.9 或更新版本，以及 pnpm。打开 **Settings → Models**。在 Claude Code 已安装并登录后，**Claude（通过 Claude Code）** 这一行会列出它报告的模型。如果程序缺失或尚未登录，这一行会提示安装 Claude Code、运行 `claude` 并输入 `/login`。从该行选择一个模型。当 `claude` 不在 `PATH` 上时，把 `DSH_CLAUDE_PATH` 设为该可执行文件的路径。
 
 ## 社区与支持
 

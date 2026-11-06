@@ -46,6 +46,13 @@ Provider ID 是永久的，因为请求、已保存会话、模型默认值和�
 
 如果已保存默认值指向已删除的提供商，输入框会显示**选择模型**，并在选择其他模型前阻止输入。
 
+<a id="use-claude-through-claude-code"></a>
+## 通过 Claude Code 使用 Claude
+
+基础配置包含 **Claude（通过 Claude Code）**。它运行同一台计算机上安装的 Claude Code 程序，并使用该程序已有的登录。DeepSeek Harness 不会索取 Claude API key，也不会读取 Claude Code 的凭据文件。
+
+安装 Claude Code，运行 `claude`，并输入 `/login`。打开 **Settings → Models**。程序缺失或未登录时，这一行会说明这些步骤。登录之后，选择 Claude Code 报告的一个模型。当 `claude` 不在 `PATH` 上时，设置 `DSH_CLAUDE_PATH`。[`dsh-llm-claude-code`](../../../packages/llm/llm-claude-code/README.zh.md) 参考文档负责进程、工具和登录行为。
+
 ## 进阶配置
 
 自动生成的[插件配置目录](../../config-catalog.zh.md)列出每个插件的所有受支持字段与默认值；[`dsh-llm-pi-ai`](../../config-catalog.zh.md#deepseek-aidsh-llm-pi-ai) 就是本页所配置的那个提供商段落。[`dsh-llm-pi-ai`](../../../packages/llm/llm-pi-ai/README.zh.md) 和 [`dsh-llm-deepseek`](../../../packages/llm/llm-deepseek/README.zh.md) 参考文档负责直接 `cordis.patch.yml` 配置、目录解析、推理控制、凭据与适配器错误。

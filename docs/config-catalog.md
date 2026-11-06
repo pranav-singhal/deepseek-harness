@@ -1909,6 +1909,27 @@ export interface Config {
 ```
 <!-- END GENERATED config-catalog:@deepseek-ai/dsh-jobs-local -->
 
+<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-claude-code -->
+<a id="deepseek-aidsh-llm-claude-code"></a>
+
+## `@deepseek-ai/dsh-llm-claude-code`
+
+- `inject`: `llm`
+- `refs`: `Volatile` (`@deepseek-ai/cordis`)
+- `source`: [`packages/llm/llm-claude-code/src/controller.ts:42`](../packages/llm/llm-claude-code/src/controller.ts)
+
+```ts config-catalog
+/** Plugin configuration this controller reads on each probe. */
+export interface ClaudeCodeConfig {
+  /**
+   * When false, Claude Code is not started.
+   * A loaded plugin passes a volatile reference. Tests may pass a plain boolean.
+   */
+  readonly enabled?: boolean | Volatile<boolean>
+}
+```
+<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-claude-code -->
+
 <!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-deepseek-account -->
 <a id="deepseek-aidsh-llm-deepseek-account"></a>
 

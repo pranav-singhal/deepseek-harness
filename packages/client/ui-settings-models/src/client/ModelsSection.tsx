@@ -501,8 +501,8 @@ function Loaded({ injected, renderSlot }: { injected: ModelsSectionFace; renderS
                       : null}
                 </span>
                 <span className={styles['rowActions']}>
-                  {/* The account catalog comes from the account listing; its model overrides live in cordis.patch.yml. */}
-                  {row.entry.provider === 'deepseek-account'
+                  {/* Account models come from the account listing. Claude Code has no credential field. */}
+                  {row.entry.provider === 'deepseek-account' || row.entry.provider === 'claude-code'
                     ? null
                     : (
                       <button
